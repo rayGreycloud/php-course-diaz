@@ -13,12 +13,11 @@ function greeting($message) {
 greeting("Hello World");
 
 function calculate($number1, $number2) {
-
   $sum = $number1 + $number2;
   echo $sum;
 }
-
 calculate(12, 24);
+
 ?>
 
 </body>

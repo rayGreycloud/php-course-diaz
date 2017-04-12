@@ -1,5 +1,5 @@
-##PHP with Edwin Diaz##
-###Udemy.com course work###
+##PHP with Edwin Diaz
+###Udemy.com course work
 
 Requires local install of XAMPP
 

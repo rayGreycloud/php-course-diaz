@@ -4,7 +4,7 @@
 
 function showAllData() {
   global $connection;
-  
+
   $query = "SELECT * FROM users";
 
   $result = mysqli_query($connection, $query);
@@ -19,5 +19,7 @@ function showAllData() {
     echo "<option value='$id'>$id</option>";
   }
 }
+
+
 
 ?>

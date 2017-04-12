@@ -1,3 +1,17 @@
+<?php
+
+if(isset($_POST['submit'])) {
+
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  echo $username . "<br>";
+  echo $password;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +22,7 @@
 <body>
 <div class="container">
 
-  <div class="col-xs-6">
+  <div class="col-sm-6">
 
     <form action="login.php" method="post">
       <div class="form-group">

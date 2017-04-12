@@ -7,10 +7,8 @@ if(isset($_POST['submit'])) {
 // Connect to db
 $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
 
-  if ($connection) {
-    echo "We are connected";
-  } else {
-    die("Database connection failed");
+  if (!$connection) {
+    die("Database connection failed" . mysqli_error());
   }
   // SQL
   $query = "INSERT INTO users(username, password) ";

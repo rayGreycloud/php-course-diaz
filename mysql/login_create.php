@@ -50,7 +50,7 @@ $connection = mysqli_connect('localhost', 'root', '', 'loginapp');
       </div>
 
       <input class="btn btn-primary" type="submit" name="submit" value="Submit">
-
+    </form>
   </div>
 
 </div>

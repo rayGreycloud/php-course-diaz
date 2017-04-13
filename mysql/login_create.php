@@ -1,15 +1,11 @@
+<?php include "db.php"; ?>
 <?php
 
 if(isset($_POST['submit'])) {
 
   $username = $_POST['username'];
   $password = $_POST['password'];
-// Connect to db
-$connection = mysqli_connect('localhost', 'root', '', 'loginapp');
 
-  if (!$connection) {
-    die("Database connection failed" . mysqli_error());
-  }
   // SQL
   $query = "INSERT INTO users(username, password) ";
   // .= concatenate operator

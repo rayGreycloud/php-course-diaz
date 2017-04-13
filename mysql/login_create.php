@@ -1,30 +1,12 @@
 <?php include "db.php"; ?>
-<?php
-
-if(isset($_POST['submit'])) {
-
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-
-  // SQL
-  $query = "INSERT INTO users(username, password) ";
-  // .= concatenate operator
-  $query .= "VALUES ('$username', '$password')";
-  // Save to db
-  $result = mysqli_query($connection, $query);
-
-  if (!$result) {
-    die('Query FAILED: ' . mysqli_error());
-  }
-}
-
-?>
+<?php include "functions.php" ?>
+<?php createRows() ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Create</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
@@ -43,7 +25,7 @@ if(isset($_POST['submit'])) {
         <input type="text" name="password" class="form-control">
       </div>
 
-      <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+      <input class="btn btn-primary" type="submit" name="submit" value="Create">
     </form>
   </div>
 

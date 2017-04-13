@@ -2,29 +2,6 @@
 
 <?php
 
-function createRows() {
-
-  if(isset($_POST['submit'])) {
-    global $connection;
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // SQL
-    $query = "INSERT INTO users(username, password) ";
-    // .= concatenate operator
-    $query .= "VALUES ('$username', '$password')";
-    // Save to db
-    $result = mysqli_query($connection, $query);
-
-    if (!$result) {
-      die('Query FAILED: ' . mysqli_error());
-    } else {
-      echo "Record created.";
-    }
-  }
-}
-
 function showAllData() {
   global $connection;
 
@@ -40,6 +17,28 @@ function showAllData() {
     $id = $row['id'];
 
     echo "<option value='$id'>$id</option>";
+  }
+}
+
+function createRows() {
+
+  if(isset($_POST['submit'])) {
+    global $connection;
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "INSERT INTO users(username, password) ";
+
+    $query .= "VALUES ('$username', '$password')";
+
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+      die('Query FAILED: ' . mysqli_error());
+    } else {
+      echo "Record created.";
+    }
   }
 }
 
@@ -59,23 +58,29 @@ function updateTable() {
 
   if (!$result) {
     die("Query failed." . mysqli_error($connection));
+  } else {
+    echo "Record updated.";
   }
 }
 
 function deleteRow() {
-  global $connection;
+  if (isset($_POST['submit'])) {
+    global $connection;
 
-  $id = $_POST['id'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+    $id = $_POST['id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  $query = "DELETE FROM users ";
-  $query .= "WHERE id = $id ";
+    $query = "DELETE FROM users ";
+    $query .= "WHERE id = $id ";
 
-  $result = mysqli_query($connection, $query);
+    $result = mysqli_query($connection, $query);
 
-  if (!$result) {
-    die("Query failed." . mysqli_error($connection));
+    if (!$result) {
+      die("Query failed." . mysqli_error($connection));
+    } else {
+      echo "Record deleted.";
+    }
   }
 }
 

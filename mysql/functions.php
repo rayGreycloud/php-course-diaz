@@ -19,6 +19,8 @@ function createRows() {
 
     if (!$result) {
       die('Query FAILED: ' . mysqli_error());
+    } else {
+      echo "Record created.";
     }
   }
 }

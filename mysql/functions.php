@@ -2,6 +2,27 @@
 
 <?php
 
+function createRows() {
+
+  if(isset($_POST['submit'])) {
+    global $connection;
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // SQL
+    $query = "INSERT INTO users(username, password) ";
+    // .= concatenate operator
+    $query .= "VALUES ('$username', '$password')";
+    // Save to db
+    $result = mysqli_query($connection, $query);
+
+    if (!$result) {
+      die('Query FAILED: ' . mysqli_error());
+    }
+  }
+}
+
 function showAllData() {
   global $connection;
 
@@ -20,7 +41,7 @@ function showAllData() {
   }
 }
 
-function UpdateTable() {
+function updateTable() {
   global $connection;
 
   $id = $_POST['id'];

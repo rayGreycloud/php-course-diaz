@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
 <div class="container">
 
   <div class="col-sm-6">
-
+    <h1 class="text-center">Create</h1>
     <form action="login_create.php" method="post">
       <div class="form-group">
         <label for="username">Username</label>

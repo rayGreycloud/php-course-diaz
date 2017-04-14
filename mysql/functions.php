@@ -28,9 +28,14 @@ function createRows() {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Sanitize to prevent SQL injection 
+    // Sanitize to prevent SQL injection
     $username = mysqli_real_escape_string($connection, $username);
     $password = mysqli_real_escape_string($connection, $password);
+    // Password encryption
+    $hashFormat = "$2y$10$";
+    $salt = "N9qo8uLOickgx2ZMRZoMye";
+    $hashF_and_salt = $hashFormat . $salt;
+    $password = crypt($password, $hashF_and_salt);
 
     $query = "INSERT INTO users(username, password) ";
 

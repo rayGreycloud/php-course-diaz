@@ -5,30 +5,43 @@
 	<aside class="col-xs-4">
 
 		<?php Navigation();?>
-			
-			
+
+
 	</aside><!--SIDEBAR-->
 
 <article class="main-content col-xs-8">
 
-	
-	<?php  
 
-	/*  Step 1: Use the Make a class called Dog
+	<?php
 
-		Step 2: Set some properties for Dog, Example, eye colors, nose, or fur color
+class Dog {
+  var $breed = "boxer";
+  var $color = "brown";
+  var $weight = 75;
+  var $age = 2;
 
-		Step 4: Make a method named ShowAll that echos all the properties
+  function showAll() {
+    echo "breed: " . $this->breed . "<br>";
+    echo "color: " . $this->color . "<br>";
+    echo "weight: " . $this->weight . "<br>";
+    echo "age: " . $this->age . "<br>";
+  }
+}
 
-		Step 5: Instantiate the class / create object and call it pitbull
+$pitbull = new Dog();
 
-Step 6: Call the method ShowAll
+$pitbull->showall();
 
-	
+/* Step 1: Use the Make a class called Dog
 
-		
-	*/
-	
+Step 2: Set some properties for Dog, Example, eye colors, nose, or fur color
+
+Step 3: Make a method named ShowAll that echos all the properties
+
+Step 4: Instantiate the class / create object and call it pitbull
+
+Step 5: Call the method ShowAll */
+
 	?>
 
 
